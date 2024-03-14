@@ -1,36 +1,41 @@
-import Pricing from '@/components/ui/Pricing/Pricing';
-import { createClient } from '@/utils/supabase/server';
+import { Link } from "@nextui-org/link";
+import { Snippet } from "@nextui-org/snippet";
+import { Code } from "@nextui-org/code"
+import { button as buttonStyles } from "@nextui-org/theme";
+import { siteConfig } from "@/config/site";
+import { title, subtitle } from "@/components/primitives";
+import { GithubIcon } from "@/components/icons";
 
-export default async function PricingPage() {
-  const supabase = createClient();
+export default function Home() {
+	return (
+		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+			<div className="inline-block max-w-lg text-center justify-center">
+				<h1 className={title()}>Manage Your Fleet&nbsp;</h1>
+				<h1 className={title({ color: "violet" })}>Efficiently and Effectively&nbsp;</h1>
+				<h1 className={title()}>
+					with our SaaS Solution.
+				</h1>
+				<h2 className={subtitle({ class: "mt-4" })}>
+					Streamline operations, reduce costs, and improve efficiency.
+				</h2>
+			</div>
 
-  const {
-    data: { user }
-  } = await supabase.auth.getUser();
+			<div className="flex gap-3">
+				<Link
+					isExternal
+					href={siteConfig.links.docs}
+					className={buttonStyles({ color: "primary", radius: "full", variant: "shadow" })}
+				>
+					Get Started
+				</Link>
+			
+			</div>
 
-  const { data: subscription, error } = await supabase
-    .from('subscriptions')
-    .select('*, prices(*, products(*))')
-    .in('status', ['trialing', 'active'])
-    .maybeSingle();
-
-  if (error) {
-    console.log(error);
-  }
-
-  const { data: products } = await supabase
-    .from('products')
-    .select('*, prices(*)')
-    .eq('active', true)
-    .eq('prices.active', true)
-    .order('metadata->index')
-    .order('unit_amount', { referencedTable: 'prices' });
-
-  return (
-    <Pricing
-      user={user}
-      products={products ?? []}
-      subscription={subscription}
-    />
-  );
+			<div className="mt-8">
+				<Snippet hideSymbol hideCopyButton variant="flat">
+				
+				</Snippet>
+			</div>
+		</section>
+	);
 }
