@@ -62,7 +62,7 @@ export const siteConfig = {
 	links: {
 		github: "https://github.com/",
 		twitter: "https://twitter.com/logicautopro",
-		docs: "https://nextui.org",
+		docs: ""
 		discord: "https://discord.gg/",
     sponsor: "https://logicauto.io"
 	},
