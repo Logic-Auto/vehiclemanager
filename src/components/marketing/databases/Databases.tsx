@@ -14,7 +14,7 @@ export default function Databases() {
       <SectionHeader
         title={
           <>
-Everything in oneplace           
+Everything in one place           
           </>
         }
       />

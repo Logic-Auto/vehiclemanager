@@ -54,57 +54,9 @@ export default function Integrations() {
                 </p>
               </CardContent>
             </div>
+            
           </Card>
           
-<Card className="relative flex overflow-hidden md:grid-cols-1 lg:col-span-2 bg-background/70 backdrop-blur-sm border-border/20">
-  <div className="absolute w-[170px] h-[170px] bg-purple-600/30 rounded-full -top-7 -left-7 z-[0] blur-2xl" />
-  <div className="rounded-lg bg-gradient-to-br from-blue-600/20 via-indigo-500/10 to-transparent">
-    <CardHeader className="relative">
-      <CardTitle className="text-white text-md">
-        QuickBooks Integration
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="relative">
-      <p>
-        Sync your financial data with QuickBooks for seamless accounting.
-      </p>
-    </CardContent>
-  </div>
-</Card>
-
-<Card className="relative flex overflow-hidden md:grid-cols-1 lg:col-span-2 bg-background/70 backdrop-blur-sm border-border/20">
-  <div className="absolute w-[170px] h-[170px] bg-purple-600/30 rounded-full -top-7 -left-7 z-[0] blur-2xl" />
-  <div className="rounded-lg bg-gradient-to-br from-blue-600/20 via-indigo-500/10 to-transparent">
-    <CardHeader className="relative">
-      <CardTitle className="text-white text-md">
-        Zapier Automation
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="relative">
-      <p>
-        Automate your workflows with Zapier and save time on repetitive tasks.
-      </p>
-    </CardContent>
-  </div>
-</Card>
-
-<Card className="relative flex overflow-hidden md:grid-cols-1 lg:col-span-2 bg-background/70 backdrop-blur-sm border-border/20">
-  <div className="absolute w-[170px] h-[170px] bg-purple-600/30 rounded-full -top-7 -left-7 z-[0] blur-2xl" />
-  <div className="rounded-lg bg-gradient-to-br from-blue-600/20 via-indigo-500/10 to-transparent">
-    <CardHeader className="relative">
-      <CardTitle className="text-white text-md">
-        Google Meet Integration
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="relative">
-      <p>
-        Schedule and join meetings directly from your dashboard with Google Meet integration.
-      </p>
-    </CardContent>
-  </div>
-</Card>
-
-
 
           {/* Add more integration examples here */}
 

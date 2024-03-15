@@ -35,12 +35,7 @@ export default async function Header() {
           >
             <img src="/logo3.png" alt="Logo" width={200} height={100} />
           </Link>
-          <Link
-            href="/blogs"
-            className="transition-colors hover:text-foreground/80 text-foreground/60"
-          >
-            Blogs
-          </Link>
+        
           <Link
             href="/pricing"
             className="transition-colors hover:text-foreground/80 text-foreground/60"
