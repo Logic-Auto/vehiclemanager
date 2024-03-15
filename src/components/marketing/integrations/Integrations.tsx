@@ -3,7 +3,6 @@ import { Section } from "@/components/core/section/Section";
 import { SectionHeader } from "@/components/core/section/SectionHeader";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Car, GlassWater } from "lucide-react";
-import { TailwindLogo, ShadcnuiLogo } from "@/components/logos";
 
 export default function Integrations() {
   return (

@@ -85,7 +85,7 @@ export default function FAQs() {
             className="mb-2 border rounded-lg bg-gradient-to-br from-background to-foreground/10 border-border/20 backdrop-blur-sm"
           >
             <AccordionTrigger className="p-4 text-left text-white text-balance">
-              How can I maintain my vehicle's performance?
+              How can I maintain my vehicles performance?
             </AccordionTrigger>
             <AccordionContent className="px-4 text-base">
               To maintain your vehicles performance, follow the manufacturers
