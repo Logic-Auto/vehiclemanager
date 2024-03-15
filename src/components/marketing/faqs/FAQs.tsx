@@ -33,8 +33,8 @@ export default function FAQs() {
               How can I add a new vehicle?
             </AccordionTrigger>
             <AccordionContent className="px-4 text-base">
-              To add a new vehicle, navigate to the "Vehicles" section in your
-              dashboard and click on the "Add Vehicle" button. Fill in the
+              To add a new vehicle, navigate to the Vehicles section in your
+              dashboard and click on the Add Vehicle button. Fill in the
               required information such as make, model, year, and license plate
               number, then save the changes.
             </AccordionContent>
@@ -48,7 +48,7 @@ export default function FAQs() {
             </AccordionTrigger>
             <AccordionContent className="px-4 text-base">
               Yes, you can track your vehicle's maintenance schedule using the
-              "Maintenance" feature in the dashboard. Set up regular maintenance
+              Maintenance feature in the dashboard. Set up regular maintenance
               tasks such as oil changes and tire rotations, and receive
               notifications when they are due.
             </AccordionContent>
