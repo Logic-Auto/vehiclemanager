@@ -12,9 +12,7 @@ export default function International() {
         <SectionHeader
           title={
             <>
-              Integration Hub
-              <br />
-              Explore powerful integrations
+              Explore powerful insights
             </>
           }
         />
