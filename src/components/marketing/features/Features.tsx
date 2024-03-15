@@ -24,7 +24,7 @@ export default function Features() {
             <b className="text-white font-poppins">Vehicle Inventory</b>
           </Pill>
           <Pill>
-            <b className="text-white font-poppins">Fuel Tracking</b>
+            <b className="text-white font-poppins">Cost Analysis</b>
           </Pill>
           <Pill>
             <Settings className="h-4 text-violet-400" />
@@ -32,7 +32,7 @@ export default function Features() {
           </Pill>
           <Pill>
             <Map className="h-4 text-violet-400" />
-            <b className="text-white font-poppins">Route Planning</b>
+            <b className="text-white font-poppins">Customer Insights</b>
           </Pill>
         </div>
         <div className="flex flex-col items-center justify-center">
@@ -42,7 +42,7 @@ export default function Features() {
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
           <Pill>
-            <b className="text-white font-poppins">Fuel Efficiency Analysis</b>
+            <b className="text-white font-poppins">Fuel Tracking</b>
           </Pill>
           <Pill>
             <Settings className="h-4 text-violet-400" />

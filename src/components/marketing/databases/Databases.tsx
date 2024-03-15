@@ -14,9 +14,7 @@ export default function Databases() {
       <SectionHeader
         title={
           <>
-            Your favourite vehicles
-            <br />
-            managed by LogicAuto.
+Everything in oneplace           
           </>
         }
       />
