@@ -44,10 +44,10 @@ export default function FAQs() {
             className="mb-2 border rounded-lg bg-gradient-to-br from-background to-foreground/10 border-border/20 backdrop-blur-sm"
           >
             <AccordionTrigger className="p-4 text-left text-white text-balance">
-              Can I track my vehicle's maintenance schedule?
+              Can I track my vehicles maintenance schedule?
             </AccordionTrigger>
             <AccordionContent className="px-4 text-base">
-              Yes, you can track your vehicle's maintenance schedule using the
+              Yes, you can track your vehicles maintenance schedule using the
               Maintenance feature in the dashboard. Set up regular maintenance
               tasks such as oil changes and tire rotations, and receive
               notifications when they are due.
@@ -71,10 +71,10 @@ export default function FAQs() {
             className="mb-2 border rounded-lg bg-gradient-to-br from-background to-foreground/10 border-border/20 backdrop-blur-sm"
           >
             <AccordionTrigger className="p-4 text-left text-white text-balance">
-              Can I track my vehicle's location in real-time?
+              Can I track my vehicles location in real-time?
             </AccordionTrigger>
             <AccordionContent className="px-4 text-base">
-              Yes, you can track your vehicle's location in real-time using GPS
+              Yes, you can track your vehicles location in real-time using GPS
               tracking devices. Install a GPS tracker in your vehicle and
               connect it to a tracking service to monitor its location and
               movement.
@@ -88,7 +88,7 @@ export default function FAQs() {
               How can I maintain my vehicle's performance?
             </AccordionTrigger>
             <AccordionContent className="px-4 text-base">
-              To maintain your vehicle's performance, follow the manufacturer's
+              To maintain your vehicles performance, follow the manufacturers
               recommended maintenance schedule, including regular oil changes,
               tire rotations, and fluid checks. Also, drive responsibly and
               avoid aggressive driving habits.
