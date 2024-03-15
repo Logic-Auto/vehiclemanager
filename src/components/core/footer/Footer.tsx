@@ -6,7 +6,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 export default async function Footer() {
   const year = new Date().getFullYear();
   return (
-    <Section size="sm" className="mt-auto bg-gray-800 py-8">
+    <Section size="sm">
       <div className="container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-3">
         {/* Logo and company info */}
         <div className="flex flex-col gap-2">
