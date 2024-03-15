@@ -2,6 +2,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { NextAuthOptions, User } from "next-auth";
 import GithubProvider from 'next-auth/providers/github';
 import prisma from "@/lib/prisma";
+import EmailProvider from 'next-auth/providers/email';
 
 interface CustomUser extends User {
   jobTitle?: string;
@@ -22,7 +23,11 @@ export const authOptions: NextAuthOptions = {
     GithubProvider({
       clientId: process.env.GITHUB_ID as string,
       clientSecret: process.env.GITHUB_SECRET as string,
-    })
+    }),
+    EmailProvider({
+      server: process.env.EMAIL_SERVER,
+      from: process.env.EMAIL_FROM,
+    }),
   ],
   callbacks: {
     async jwt({ token, trigger, session, account, user }) {

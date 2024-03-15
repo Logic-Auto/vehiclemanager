@@ -69,14 +69,14 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
                       required
                       placeholder="name@example.com"
                       {...field}
-                      disabled
+                      
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className="capitalize" disabled>
+            <Button type="submit" className="capitalize" >
               {secondaryMessage} with Email
             </Button>
           </form>
