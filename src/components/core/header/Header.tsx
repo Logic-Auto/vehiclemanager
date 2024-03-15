@@ -33,7 +33,7 @@ export default async function Header() {
             className="flex items-center"
             title="Vehicle Manager: LogicAuto"
           >
-            <img src="/logo3.png" alt="Logo" width={400} height={100} />
+            <img src="/logo3.png" alt="Logo" width={300} height={100} />
           </Link>
           <Link
             href="/blogs"
