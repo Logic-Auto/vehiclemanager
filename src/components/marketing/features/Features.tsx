@@ -32,7 +32,7 @@ export default function Features() {
           </Pill>
           <Pill>
             <Map className="h-4 text-violet-400" />
-            <b className="text-white font-poppins">Customer Insights</b>
+            <b className="text-white font-poppins">Powerful Insights</b>
           </Pill>
         </div>
         <div className="flex flex-col items-center justify-center">

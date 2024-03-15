@@ -48,13 +48,18 @@ export default async function Header() {
             Pricing
           </Link>
         </nav>
-        <div className="relative flex items-center justify-between gap-2 space-x-2 text-sm md:justify-end">
-          {/* Sign In */}
+        <div className="relative flex items-center justify-end gap-2 space-x-2 text-sm md:justify-end">
+          {/* Sign In and Sign Up buttons */}
           {!session && (
             <>
               <Button asChild size="sm">
                 <Link href="/signin" className="m-0">
-                  Get started
+                  Sign In
+                </Link>
+              </Button>
+              <Button asChild size="sm">
+                <Link href="/signup" className="m-0">
+                  Sign Up
                 </Link>
               </Button>
             </>
