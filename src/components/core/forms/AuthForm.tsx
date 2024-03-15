@@ -36,6 +36,8 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     signIn("resend", { email: values.email, callbackUrl: "/" });
+        signIn("email", { email: values.email, callbackUrl: "/" });
+
   }
 
   // Messaging
