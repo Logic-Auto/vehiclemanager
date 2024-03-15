@@ -67,9 +67,7 @@ export const Plans = async () => {
                   {product.currency.toUpperCase()} {product.priceFormatted}
                 </div>
                 <ul className="space-y-2 list-disc list-inside">
-                  <li>1 Workspace</li>
-                  <li>Unlimited Public Projects</li>
-                  <li>Community Access</li>
+                 
                 </ul>
                 {userSubscriptions ? (
                   <Button>Manage Subscription</Button>
