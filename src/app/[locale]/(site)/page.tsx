@@ -37,7 +37,7 @@ export default function Home() {
       >
       
         <Button asChild>
-          <Link href="https://github.com/mattsince87/nextauth-prisma">
+          <Link href="">
             <Github className="h-4" />
             Start managing your vehicles now!
           </Link>
