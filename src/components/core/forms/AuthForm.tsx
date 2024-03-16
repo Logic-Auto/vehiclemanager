@@ -1,7 +1,7 @@
 "use client";
 import { signIn } from "next-auth/react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 import Link from "next/link";
@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { GithubIcon } from "lucide-react";
-import supabase from "@/components/logos/supabase";
 const formSchema = z.object({
   email: z.string().email(),
 });
@@ -34,15 +33,11 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
   });
 
   // 2. Define a submit handler.
-
-  const onSubmit: SubmitHandler<FormData & { email: string }> = async ({ email }) => {
-    const { error } = await supabase.auth.signIn({ email });
-    if (error) {
-      console.error(error.message);
-    } else {
-      // Show a message to check their email for the login link
-    }
-  };
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
+    signIn("email", { email: values.email, callbackUrl: "/" });
+    
+  }
 
   // Messaging
   let primaryMessage = "create an account";

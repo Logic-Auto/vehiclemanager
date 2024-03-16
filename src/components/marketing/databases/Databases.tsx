@@ -14,6 +14,39 @@ import {
   Calendar,
   UserCheck,
 } from "lucide-react";
+
+
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from '@radix-ui/react-dialog';
+import { styled } from '@stitches/react';
+import { PlusIcon } from '@radix-ui/react-icons';
+
+const StyledDialog = styled(DialogContent, {
+  background: 'white',
+  borderRadius: '6px',
+  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+  padding: '20px',
+  width: '400px',
+});
+
+const StyledInput = styled('input', {
+  border: '1px solid #ccc',
+  borderRadius: '4px',
+  padding: '10px',
+  marginBottom: '10px',
+  width: '100%',
+});
+
+const StyledButton = styled('button', {
+  background: '#007bff',
+  border: 'none',
+  borderRadius: '4px',
+  color: 'white',
+  padding: '10px 20px',
+  cursor: 'pointer',
+  '&:hover': {
+    background: '#0056b3',
+  },
+});
 export default function Databases() {
   return (
     <Section size="md">
