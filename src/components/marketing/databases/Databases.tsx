@@ -16,17 +16,9 @@ import {
 } from "lucide-react";
 
 
-import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from '@radix-ui/react-dialog';
 import { styled } from '@stitches/react';
 import { PlusIcon } from '@radix-ui/react-icons';
 
-const StyledDialog = styled(DialogContent, {
-  background: 'white',
-  borderRadius: '6px',
-  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
-  padding: '20px',
-  width: '400px',
-});
 
 const StyledInput = styled('input', {
   border: '1px solid #ccc',
