@@ -26,14 +26,9 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GITHUB_SECRET as string,
     }),
     EmailProvider({
-      server: process.env.EMAIL_SERVER,
+      server: process.env.EMAIL_SERVER, // Should be in the format: "smtp://user:pass@smtp.example.com"
       from: process.env.EMAIL_FROM,
-    }),
-    Auth0Provider({
-      clientId: process.env.AUTH0_CLIENT_ID as string,
-      clientSecret: process.env.AUTH0_CLIENT_SECRET as string,
-      issuer: process.env.AUTH0_ISSUER,
-    }),
+    })
   ],
   callbacks: {
     async jwt({ token, trigger, session, account, user }) {
