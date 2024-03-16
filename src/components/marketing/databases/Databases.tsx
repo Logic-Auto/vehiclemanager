@@ -7,7 +7,13 @@ import PostgresLogo from "@/components/logos/postgres";
 import PrismaLogo from "@/components/logos/prisma";
 import SqliteLogo from "@/components/logos/sqlite";
 import SupabaseLogo from "@/components/logos/supabase";
-
+import {
+  Database,
+  MapPin,
+  Truck,
+  Calendar,
+  UserCheck,
+} from "lucide-react";
 export default function Databases() {
   return (
     <Section size="md">
@@ -23,25 +29,27 @@ Everything in one place
           <div>
             <img src="logo.png" alt="Logo" width={100} height={100} />
           </div>
-          <div className="flex flex-wrap justify-center gap-3 p-4">
+      
+
+<div className="flex flex-wrap justify-center gap-3 p-4">
   <Pill>
-    <img src="vehicle-data-logo.png" alt="Vehicle Data Logo" className="h-4 text-violet-400" />
+    <Database className="h-4 text-violet-400" />
     <b className="text-white font-poppins">Vehicle Data Management</b>
   </Pill>
   <Pill>
-    <img src="vehicle-tracking-logo.png" alt="Vehicle Tracking Logo" className="h-4 text-violet-400" />
+    <MapPin className="h-4 text-violet-400" />
     <b className="text-white font-poppins">Vehicle Tracking</b>
   </Pill>
   <Pill>
-    <img src="fleet-management-logo.png" alt="Fleet Management Logo" className="h-4 text-violet-400" />
+    <Truck className="h-4 text-violet-400" />
     <b className="text-white font-poppins">Fleet Management</b>
   </Pill>
   <Pill>
-    <img src="maintenance-scheduling-logo.png" alt="Maintenance Scheduling Logo" className="h-4 text-violet-400" />
+    <Calendar className="h-4 text-violet-400" />
     <b className="text-white font-poppins">Maintenance Scheduling</b>
   </Pill>
   <Pill>
-    <img src="driver-behavior-analysis-logo.png" alt="Driver Behavior Analysis Logo" className="h-4 text-violet-400" />
+    <UserCheck className="h-4 text-violet-400" />
     <b className="text-white font-poppins">Driver Behavior Analysis</b>
   </Pill>
 </div>
