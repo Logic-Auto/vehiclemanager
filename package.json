@@ -1,10 +1,10 @@
 {
-  "name": "firestarter.dev",
+  "name": "vehiclemanager",
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "uixmat",
-    "url": "https://x.com/uiuxmat"
+    "name": "japangor",
+    "url": "https://x.com/japangor"
   },
   "scripts": {
     "dev": "next dev",
@@ -48,7 +48,6 @@
     "date-fns": "^3.3.1",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
-    "framer-motion": "^4.1.17",
     "lodash": "4.17.20",
     "lucide-react": "^0.311.0",
     "next": "^14.1.0",
