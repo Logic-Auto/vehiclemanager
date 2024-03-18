@@ -9,21 +9,7 @@ import { Button } from "@/components/ui/button";
 import { authOptions } from "@/lib/auth";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const fetchPlans = async () => {
-  const products = await stripe.products.list({ active: true });
-  const prices = await stripe.prices.list({ active: true });
 
-  // Combine product and price data
-  const plans = products.data.map((product) => {
-    const productPrices = prices.data.filter((price) => price.product === product.id);
-    return {
-      ...product,
-      prices: productPrices,
-    };
-  });
-
-  return plans;
-};
 
 export const Plans = async () => {
   const session = await getServerSession(authOptions);
@@ -50,35 +36,11 @@ export const Plans = async () => {
 
   return (
     <>
-      <div className="flex flex-col items-start justify-center max-w-4xl gap-6 mx-auto md:flex-row md:gap-12">
-        {productsWithPrices.map((product) => {
-          return (
-            <Card
-              className="flex-1 w-full"
-              key={product.id}
-              data-productid={product.id}
-            >
-              <CardHeader>
-                <CardTitle>{product.name}</CardTitle>
-                <div dangerouslySetInnerHTML={{ __html: product.description }} />
-              </CardHeader>
-              <CardContent className="flex flex-col gap-4">
-                <div className="text-2xl font-bold">
-                  {product.currency.toUpperCase()} {product.priceFormatted}
-                </div>
-                <ul className="space-y-2 list-disc list-inside">
-                 
-                </ul>
-                {userSubscriptions ? (
-                  <Button>Manage Subscription</Button>
-                ) : (
-                  <PlanButton plan={product} subscription={null} />
-                )}
-              </CardContent>
-            </Card>
-          );
-        })}
-      </div>
+    
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+<stripe-pricing-table pricing-table-id="prctbl_1OvjCEJoLn2MYD53Wxa5vsee"
+publishable-key="pk_live_51MmR3NJoLn2MYD53gpYLKJRKzcAOdHD14StIoA7LzDWpOnIEraNjFVfzVy9IYxA1aQnDL8auw754SLjLY650X7D500S4ES47Qi">
+</stripe-pricing-table>
     </>
   );
 };

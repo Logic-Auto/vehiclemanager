@@ -53,7 +53,7 @@ export default async function Header() {
                 </Link>
               </Button>
               <Button asChild size="sm">
-                <Link href="/signup" className="m-0">
+                <Link href="/signin" className="m-0">
                   Sign Up
                 </Link>
               </Button>
