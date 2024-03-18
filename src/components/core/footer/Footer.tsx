@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex flex-col items-center md:items-start md:col-span-1">
             <a href="/" title="Home">
-              <img src="/logo3.png" alt="Logo" className="h-10 md:h-20" />
+            <img src="/logo3.png" alt="Logo" width={200} height={100} />
             </a>
           </div>
           {/* Menu Links */}
