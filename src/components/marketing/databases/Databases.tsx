@@ -4,6 +4,7 @@ import { SectionHeader } from '@/components/core/section/SectionHeader';
 import { CommandMenu } from './command-menu';
 import Pill from '@/components/core/pill/Pill';
 import { Database, MapPin, Truck, Calendar, UserCheck } from "lucide-react";
+import Logo from '@/components/core/brand/Logo';
 
 export default function Databases() {
   return (
@@ -43,8 +44,8 @@ export default function Databases() {
             </Pill>
           </div>
         </div>
-        <div>
-          <CommandMenu />
+        <div className="flex justify-end">
+          <Logo></Logo>
         </div>
       </div>
     </Section>

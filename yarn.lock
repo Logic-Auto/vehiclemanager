@@ -245,7 +245,7 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@emotion/is-prop-valid@^0.8.1", "@emotion/is-prop-valid@^0.8.2":
+"@emotion/is-prop-valid@*", "@emotion/is-prop-valid@^0.8.1", "@emotion/is-prop-valid@^0.8.2":
   version "0.8.8"
   resolved "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz"
   integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
@@ -3146,6 +3146,13 @@ fraction.js@^4.2.0, fraction.js@^4.3.7:
   resolved "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
+framer-motion@^11.0.14:
+  version "11.0.14"
+  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-11.0.14.tgz"
+  integrity sha512-RFjo2hB1MTW0EWsHQaXgVn0AEUDGxAs0ZL2vVjTTJJu3N7wFiLkmqTn5ysLjL+qKZ9jvfpKXDb9waN9AyLqk8g==
+  dependencies:
+    tslib "^2.4.0"
+
 framer-motion@10.17.4:
   version "10.17.4"
   resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-10.17.4.tgz"
@@ -3928,11 +3935,6 @@ lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
-
-lodash@4.17.20:
-  version "4.17.20"
-  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz"
-  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
 log-symbols@^4.1.0, log-symbols@4.1.0:
   version "4.1.0"

@@ -119,13 +119,12 @@ export const CommandMenu = () => {
     <div className={classNames(opened && "opened")} ref={commandMenuRef}>
       <div
         className={classNames(
-          "absolute left-[calc(50%+7.5rem)] flex w-[70vw] max-w-[50rem] -translate-x-1/2 flex-col items-start rounded-xl border border-transparent-white bg-transparent-white shadow-[rgb(0_0_0_/_35%)_0px_7px_32px] transition-[transform,opacity] md:left-1/2",
+          "flex flex-col w-full border rounded-lg bg-gradient-to-b from-slate-800/60 to-card/20 backdrop-blur-sm border-border/20",
           opened && "translate-y-[10rem] opacity-100 md:translate-y-[2rem]",
-          !opened && "translate-y-[10rem] opacity-60"
         )}
       >
         <span className="ml-4 mt-2 bg-white/[0.05] px-2 text-xs leading-8 text-white/50">
-          LIN-111 Walkway lightning
+         Our features
         </span>
         <input
           placeholder="Type a command or search..."
