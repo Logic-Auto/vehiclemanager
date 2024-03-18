@@ -38,6 +38,7 @@ export default function Home() {
       
         <Button asChild>
           <Link href="">
+            <Github className="h-4" />
             Start managing your vehicles now!
           </Link>
         </Button>

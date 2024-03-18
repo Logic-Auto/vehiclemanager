@@ -1,24 +1,9 @@
-import Pill from "@/components/core/pill/Pill";
-import { Section } from "@/components/core/section/Section";
-import { SectionHeader } from "@/components/core/section/SectionHeader";
-import MongodbLogo from "@/components/logos/mongodb";
-import MysqlLogo from "@/components/logos/mysql";
-import PostgresLogo from "@/components/logos/postgres";
-import PrismaLogo from "@/components/logos/prisma";
-import SqliteLogo from "@/components/logos/sqlite";
-import SupabaseLogo from "@/components/logos/supabase";
-import { Timeline } from '@mantine/core';
 import React from 'react';
-
-import {
-  Database,
-  MapPin,
-  Truck,
-  Calendar,
-  UserCheck,
-} from "lucide-react";
-import { initialTabs as tabs } from "./ingredients";
-import { CommandMenu } from "./command-menu";
+import { Section } from '@/components/core/section/Section';
+import { SectionHeader } from '@/components/core/section/SectionHeader';
+import { CommandMenu } from './command-menu';
+import Pill from '@/components/core/pill/Pill';
+import { Database, MapPin, Truck, Calendar, UserCheck } from "lucide-react";
 
 export default function Databases() {
   return (
@@ -35,8 +20,6 @@ export default function Databases() {
           <div>
             <img src="logo.png" alt="Logo" width={100} height={100} />
           </div>
-
-
           <div className="flex flex-wrap justify-center gap-3 p-4">
             <Pill>
               <Database className="h-4 text-violet-400" />
@@ -59,13 +42,11 @@ export default function Databases() {
               <b className="text-white font-poppins">Driver Behavior Analysis</b>
             </Pill>
           </div>
-
         </div>
-      <CommandMenu />
-
+        <div>
+          <CommandMenu />
+        </div>
       </div>
-      
-      
     </Section>
   );
 }

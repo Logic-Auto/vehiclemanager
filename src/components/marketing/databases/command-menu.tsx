@@ -23,13 +23,12 @@ import { FaOilCan } from "react-icons/fa";
 
 const commandOptions = [
   {
-    label: "Assign to..",
+    label: "Add Vehicle..",
     icon: AssignToIcon,
     subOptions: [
-      { label: "Self", icon: PersonIcon },
-      { label: "Family Member", icon: PersonIcon },
-      { label: "Service Provider", icon: PersonIcon },
-    ],
+      { label: "Add By Vin", icon: PersonIcon },
+      { label: "Add Manually", icon: PersonIcon },
+      { label: "Import CSV", icon: PersonIcon },],
   },
   {
     label: "View Analytics",
@@ -113,26 +112,24 @@ export const CommandMenu = () => {
 
   useEffect(() => {
     if (!commandMenuRef.current) return;
-    commandMenuRef.current.classList.remove("animate-bounce");
     commandMenuRef.current.clientWidth;
-    commandMenuRef.current.classList.add("animate-bounce");
   }, [selectedOption]);
 
   return (
     <div className={classNames(opened && "opened")} ref={commandMenuRef}>
       <div
         className={classNames(
-          "absolute left-[calc(50%+7.5rem)] flex w-[90vw] max-w-[64rem] -translate-x-1/2 flex-col items-start rounded-xl border border-transparent-white bg-transparent-white shadow-[rgb(0_0_0_/_35%)_0px_7px_32px] transition-[transform,opacity] md:left-1/2",
-          opened && "translate-y-[12.8rem] opacity-100 md:translate-y-[2.4rem]",
-          !opened && "translate-y-[12.8rem] opacity-60"
+          "absolute left-[calc(50%+7.5rem)] flex w-[70vw] max-w-[50rem] -translate-x-1/2 flex-col items-start rounded-xl border border-transparent-white bg-transparent-white shadow-[rgb(0_0_0_/_35%)_0px_7px_32px] transition-[transform,opacity] md:left-1/2",
+          opened && "translate-y-[10rem] opacity-100 md:translate-y-[2rem]",
+          !opened && "translate-y-[10rem] opacity-60"
         )}
       >
-        <span className="ml-4 mt-2 bg-white/[0.05] px-2 text-xs leading-10 text-white/50">
+        <span className="ml-4 mt-2 bg-white/[0.05] px-2 text-xs leading-8 text-white/50">
           LIN-111 Walkway lightning
         </span>
         <input
           placeholder="Type a command or search..."
-          className="w-full bg-transparent p-5 text-lg outline-none"
+          className="w-full bg-transparent p-4 text-lg outline-none"
           value={searchValue}
           onChange={(ev) => setSearchValue(ev.target.value)}
         />
@@ -154,7 +151,7 @@ export const CommandMenu = () => {
                   ev.stopPropagation();
                 }
               }}
-              className="command-menu-button flex h-[4.6rem] w-full items-center gap-3 px-5 first:bg-white/[0.15] hover:bg-white/[0.05]"
+              className="command-menu-button flex h-[3.6rem] w-full items-center gap-3 px-4 first:bg-white/[0.15] hover:bg-white/[0.05]"
             >
               <Icon />
               {label}
