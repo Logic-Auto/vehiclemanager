@@ -3,6 +3,7 @@ import { SectionHeader } from "@/components/core/section/SectionHeader";
 import Pill from "@/components/core/pill/Pill";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NextintlLogo from "@/components/logos/nextintl";
+import { CommandMenu } from "../databases/command-menu";
 
 
 export default function International() {
@@ -93,7 +94,6 @@ export default function International() {
   </Pill>
   {/* Add more feature pills as needed */}
 </div>
-
           </div>
         </div>
       </Section>

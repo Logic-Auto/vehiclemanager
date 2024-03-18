@@ -8,7 +8,6 @@ import PrismaLogo from "@/components/logos/prisma";
 import SqliteLogo from "@/components/logos/sqlite";
 import SupabaseLogo from "@/components/logos/supabase";
 import { Timeline } from '@mantine/core';
-import { motion } from 'framer-motion';
 import React from 'react';
 
 import {
@@ -19,7 +18,7 @@ import {
   UserCheck,
 } from "lucide-react";
 import { initialTabs as tabs } from "./ingredients";
-import { AnimatePresence } from "framer-motion";
+import { CommandMenu } from "./command-menu";
 
 export default function Databases() {
   return (
@@ -62,9 +61,11 @@ export default function Databases() {
           </div>
 
         </div>
-      
+      <CommandMenu />
 
       </div>
+      
+      
     </Section>
   );
 }

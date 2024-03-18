@@ -30,11 +30,10 @@ export default function Home() {
   const t = useTranslations("Index");
   return (
     <>
-     <Hero
+      <Hero
         size="lg"
         title={t("title")}
         description={<p className="text-lg text-pretty">{t("subtitle")}</p>}
-        className="animate-fade-in"
       >
       
         <Button asChild>

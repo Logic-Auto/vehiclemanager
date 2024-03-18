@@ -1,5 +1,6 @@
 import { Section } from "@/components/core/section/Section";
 import { Link } from "@/lib/intl/navigation";
+import { InstagramIcon, LinkedinIcon, XIcon } from "lucide-react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
@@ -33,31 +34,31 @@ export default function Footer() {
             <p className="text-gray-300 mb-2">Follow us:</p>
             <div className="flex justify-center md:justify-start gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.linkedin.com/company/vehiclemanager/"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Facebook"
                 className="text-indigo-300 hover:text-white"
               >
-                <FaFacebook />
+                <LinkedinIcon />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/vehicle_manager"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Twitter"
                 className="text-indigo-300 hover:text-white"
               >
-                <FaTwitter />
+                <XIcon />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/vehiclemanager.ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Instagram"
                 className="text-indigo-300 hover:text-white"
               >
-                <FaInstagram />
+                <InstagramIcon />
               </a>
             </div>
           </div>
