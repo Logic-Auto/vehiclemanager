@@ -1,70 +1,70 @@
 import { Section } from "@/components/core/section/Section";
 import { Link } from "@/lib/intl/navigation";
-import Logo from "@/components/core/brand/Logo";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-import { Container } from "../container/container";
-import { InstagramIcon, LinkedinIcon, XIcon } from "lucide-react";
-const footerLinks = [
-  {
-    title: "About",
-    links: [
-      { title: "Features", href: "#" },
-      { title: "Pricing", href: "#" },
-    
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { title: "About us", href: "#" },
-      { title: "Blog", href: "#" },
-      { title: "Careers", href: "#" },
 
-    ],
-  },
-
-
-];
-export default async function Footer() {
+export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-12 border-t border-transparent-white py-[5.6rem] text-sm">
-    <Container className="flex flex-col justify-between lg:flex-row">
-      <div>
-        <div className="flex h-full flex-row justify-between lg:flex-col">
-          <div className="flex items-center text-grey">
-          <img src="/logo3.png" alt="Logo" width={200} height={100} />
+    <Section size="sm">
+      <footer className="bg-black text-white py-8">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6">
+          {/* Logo */}
+          <div className="flex flex-col items-center md:items-start md:col-span-1">
+            <a href="/" title="Home">
+              <img src="/logo3.png" alt="Logo" className="h-10 md:h-20" />
+            </a>
           </div>
-          <div className="mt-auto flex space-x-4 text-grey">
-            <XIcon />
-            <InstagramIcon />
-            <LinkedinIcon />
+          {/* Menu Links */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left md:col-span-2">
+            <div>
+              <p className="font-bold text-gray-300 mb-2">About</p>
+              <Link href="/features" title="Features" className="text-indigo-300 hover:text-white block mb-2">Features</Link>
+              <Link href="/pricing" title="Pricing" className="text-indigo-300 hover:text-white block mb-2">Pricing</Link>
+            </div>
+            <div>
+              <p className="font-bold text-gray-300 mb-2">Company</p>
+              <Link href="/about-us" title="About us" className="text-indigo-300 hover:text-white block mb-2">About us</Link>
+              <Link href="/blog" title="Blog" className="text-indigo-300 hover:text-white block mb-2">Blog</Link>
+              <Link href="/careers" title="Careers" className="text-indigo-300 hover:text-white block mb-2">Careers</Link>
+            </div>
+          </div>
+          {/* Social links */}
+          <div className="flex flex-col items-center md:items-start md:col-span-1 md:text-center">
+            <p className="text-gray-300 mb-2">Follow us:</p>
+            <div className="flex justify-center md:justify-start gap-4">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Facebook"
+                className="text-indigo-300 hover:text-white"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Twitter"
+                className="text-indigo-300 hover:text-white"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram"
+                className="text-indigo-300 hover:text-white"
+              >
+                <FaInstagram />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-wrap">
-        {footerLinks.map((column) => (
-          <div
-            key={column.title}
-            className="mt-10 min-w-[50%] lg:mt-0 lg:min-w-[18rem]"
-          >
-            <h3 className="mb-3 font-medium">{column.title}</h3>
-            <ul>
-              {column.links.map((link) => (
-                <li key={link.title} className="[&_a]:last:mb-0">
-                  <Link
-                    className="mb-3 block text-grey transition-colors hover:text-off-white"
-                    href={link.href}
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </Container>
-  </footer>
+        {/* Copyright */}
+  
+      </footer>
+    </Section>
   );
 }
