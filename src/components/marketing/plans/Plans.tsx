@@ -10,34 +10,34 @@ import { authOptions } from "@/lib/auth";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-
 export const Plans = async () => {
   const session = await getServerSession(authOptions);
-
   let user = null;
+
   if (session?.user?.id) {
     user = await getUserById(session.user.id);
   }
 
-  const products = await stripe.products.list();
-  const prices = await stripe.prices.list();
-
-  const productsWithPrices = products.data.map((product) => {
-    const productPrice = prices.data.find((price) => price.product === product.id);
+  const prices = await stripe.prices.list({ active: true });
+  const plans = await Promise.all(prices.data.map(async (price) => {
+    const product = await stripe.products.retrieve(price.product);
+    const features = product.metadata && product.metadata.features ? product.metadata.features.split(",").map(feature => feature.trim()) : [];
     return {
-      ...product,
-      price: productPrice.unit_amount,
-      priceFormatted: (productPrice.unit_amount / 100).toFixed(2),
-      currency: productPrice.currency,
+      id: product.id,
+      name: product.name,
+      description: product.description,
+      price: price.unit_amount,
+      priceFormatted: (price.unit_amount / 100).toFixed(2),
+      currency: price.currency,
+      features: features,
     };
-  });
+  }));
 
   const userSubscriptions = user && user.user ? user.user.subscriptions : null;
 
   return (
     <>
-    
-    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+     <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 <stripe-pricing-table pricing-table-id="prctbl_1OvjCEJoLn2MYD53Wxa5vsee"
 publishable-key="pk_live_51MmR3NJoLn2MYD53gpYLKJRKzcAOdHD14StIoA7LzDWpOnIEraNjFVfzVy9IYxA1aQnDL8auw754SLjLY650X7D500S4ES47Qi">
 </stripe-pricing-table>

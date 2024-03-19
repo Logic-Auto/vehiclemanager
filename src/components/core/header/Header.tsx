@@ -48,7 +48,7 @@ export default async function Header() {
           {!session && (
             <>
               <Button asChild size="sm">
-                <Link href="/signin" className="m-0">
+                <Link href="/api/auth/login" className="m-0">
                   Sign In
                 </Link>
               </Button>

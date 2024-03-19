@@ -1,7 +1,7 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { NextAuthOptions, User } from "next-auth";
+import { Session } from "next-auth";
 import GithubProvider from 'next-auth/providers/github';
-import EmailProvider from 'next-auth/providers/email';
 import Auth0Provider from 'next-auth/providers/auth0';
 import prisma from "@/lib/prisma";
 
@@ -25,16 +25,21 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GITHUB_ID as string,
       clientSecret: process.env.GITHUB_SECRET as string,
     }),
-    EmailProvider({
-      server: process.env.EMAIL_SERVER, // Should be in the format: "smtp://user:pass@smtp.example.com"
-      from: process.env.EMAIL_FROM,
-    })
+ 
+    Auth0Provider({
+      clientId: process.env.AUTH0_CLIENT_ID as string,
+      clientSecret: process.env.AUTH0_CLIENT_SECRET as string,
+      domain: process.env.AUTH0_DOMAIN as string,
+      redirectUri: process.env.AUTH0_REDIRECT_URI as string,
+      postLogoutRedirectUri: process.env.AUTH0_POST_LOGOUT_REDIRECT_URI as string,
+    }),
+    
   ],
   callbacks: {
     async jwt({ token, trigger, session, account, user }) {
       // Initial sign-in
       if (account && user) {
-        token.userId = user.id;
+        token.userId = user.sub; // Use sub instead of id for Auth0
         const userFromDb = await prisma.user.findUnique({
           where: { email: user.email as string },
         });
@@ -52,7 +57,7 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
     // Custom Session
-    async session({session, token}) {
+    async session({ session, token }) {
       if (token?.userId) {
         (session.user as CustomUser).id = token.userId as string;
       }
@@ -75,3 +80,5 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
+
+export default authOptions;
