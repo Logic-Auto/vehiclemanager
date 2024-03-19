@@ -1,7 +1,7 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { NextAuthOptions, User } from "next-auth";
-import { Session } from "next-auth";
 import GithubProvider from 'next-auth/providers/github';
+import EmailProvider from 'next-auth/providers/email';
 import Auth0Provider from 'next-auth/providers/auth0';
 import prisma from "@/lib/prisma";
 
@@ -30,8 +30,7 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.AUTH0_CLIENT_ID as string,
       clientSecret: process.env.AUTH0_CLIENT_SECRET as string,
       domain: process.env.AUTH0_DOMAIN as string,
-      redirectUri: process.env.AUTH0_REDIRECT_URI as string,
-      postLogoutRedirectUri: process.env.AUTH0_POST_LOGOUT_REDIRECT_URI as string,
+      callbackUrl: process.env.AUTH0_CALLBACK_URL as string,
     }),
     
   ],
@@ -39,7 +38,7 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, trigger, session, account, user }) {
       // Initial sign-in
       if (account && user) {
-        token.userId = user.sub; // Use sub instead of id for Auth0
+        token.userId = user.id;
         const userFromDb = await prisma.user.findUnique({
           where: { email: user.email as string },
         });
