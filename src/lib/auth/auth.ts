@@ -25,14 +25,10 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GITHUB_ID as string,
       clientSecret: process.env.GITHUB_SECRET as string,
     }),
- 
-    Auth0Provider({
-      clientId: process.env.AUTH0_CLIENT_ID as string,
-      clientSecret: process.env.AUTH0_CLIENT_SECRET as string,
-      domain: process.env.AUTH0_DOMAIN as string,
-      callbackUrl: process.env.AUTH0_CALLBACK_URL as string,
-    }),
-    
+    EmailProvider({
+      server: process.env.EMAIL_SERVER, // Should be in the format: "smtp://user:pass@smtp.example.com"
+      from: process.env.EMAIL_FROM,
+    })
   ],
   callbacks: {
     async jwt({ token, trigger, session, account, user }) {
@@ -56,7 +52,7 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
     // Custom Session
-    async session({ session, token }) {
+    async session({session, token}) {
       if (token?.userId) {
         (session.user as CustomUser).id = token.userId as string;
       }
@@ -79,5 +75,3 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
-
-export default authOptions;

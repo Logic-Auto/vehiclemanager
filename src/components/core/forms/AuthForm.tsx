@@ -110,7 +110,7 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
           and{" "}
           <Link
             className="underline underline-offset-4 hover:text-primary"
-            href="/api/auth/login"
+            href="/privacy"
           >
             Privacy Policy
           </Link>
