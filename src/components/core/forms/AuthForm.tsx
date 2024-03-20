@@ -35,8 +35,18 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    signIn("email", { email: values.email, callbackUrl: "/" });
-    
+    signIn("email", {
+      email: values.email,
+      callbackUrl: "/", // Redirect to the homepage after successful sign-in
+    }).then((result) => {
+      if (result.error) {
+        console.error("Sign-in error:", result.error);
+        // Handle sign-in error (e.g., show an error message)
+      } else {
+        console.log("Sign-in success");
+        // Handle sign-in success (e.g., redirect to a dashboard)
+      }
+    });
   }
 
   // Messaging
