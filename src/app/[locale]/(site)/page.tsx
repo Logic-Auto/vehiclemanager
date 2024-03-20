@@ -41,6 +41,7 @@ export default function Home() {
             <Github className="h-4" />
             Start managing your vehicles now!
           </Link>
+          
         </Button>
       </Hero>
 

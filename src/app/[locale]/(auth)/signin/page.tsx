@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default function SigninPage() {
-  
   return (
     <div className="container relative flex-col items-center justify-center h-dvh md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <div

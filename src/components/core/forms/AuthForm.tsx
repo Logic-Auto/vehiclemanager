@@ -16,6 +16,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { GithubIcon } from "lucide-react";
 import { supabase } from "@/lib/auth/supabase";
+import Page from "@/app/[locale]/(site)/onboard/page";
+import { useRouter } from "@/lib/intl/navigation";
 const formSchema = z.object({
   email: z.string().email(),
 });
@@ -58,7 +60,11 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
     primaryMessage = "sign in";
     secondaryMessage = "sign in";
   }
+const router = useRouter();
 
+const handleClick = () => {
+  router.push('/onboard');
+};
   return (
     <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
       <div className="flex flex-col space-y-2 text-center">
@@ -84,14 +90,15 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
                       {...field}
                       
                     />
+                    
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button  onClick={() => signIn("email", { callbackUrl: "/" })} type="submit" className="capitalize" >
-              {secondaryMessage} with Email
-            </Button>
+           <Button onClick={handleClick} type="submit" className="capitalize">
+    {secondaryMessage} with Email
+  </Button>
           </form>
         </Form>
         <div className="relative">
@@ -106,7 +113,7 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
         </div>
         <Button
           variant="secondary"
-          onClick={() => signIn("github", { callbackUrl: "/" })}
+          onClick={() => signIn("github", { callbackUrl: "/onboard" })}
           className="capitalize bg-indigo-700 hover:bg-indigo-800"
         >
           <GithubIcon className="h-4 mr-1" /> {secondaryMessage} with Github
