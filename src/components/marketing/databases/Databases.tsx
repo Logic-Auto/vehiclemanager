@@ -19,7 +19,7 @@ export default function Databases() {
       <div className="grid w-full max-w-4xl gap-6 mx-auto md:grid-cols-2">
         <div className="flex flex-col items-center justify-center gap-6">
           <div>
-            <img src="logo.png" alt="Logo" width={100} height={100} />
+            <img src="logo3.png" alt="Logo" width={100} height={100} />
           </div>
           <div className="flex flex-wrap justify-center gap-3 p-4">
             <Pill>
