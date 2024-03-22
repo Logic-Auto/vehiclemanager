@@ -34,7 +34,7 @@ const initialValues: FormItems = {
   name: "",
   email: "",
   phone: "",
-  plan: "arcade",
+  plan: "Free",
   yearly: false,
   addOns: [
     {

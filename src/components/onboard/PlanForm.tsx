@@ -13,17 +13,16 @@ type Plan = "basic" | "pro" | "premium" | "free";
 
 const PlanForm = ({ updateForm, plan, yearly }: stepProps) => {
   const [yearlyUpdated, setYearlyUpdated] = useState(yearly);
-  const [planSelected, setPlanSelected] = useState<Plan>(plan);
+  const [planSelected, setPlanSelected] = useState<"Free" | "advanced" | "pro" | "basic">("Free");
 
   const handleCheckedChange = (yearlyUpdated: boolean) => {
     setYearlyUpdated(yearlyUpdated);
     updateForm({ yearly: yearlyUpdated });
   };
 
-  const handleValueChange = (planSelected: Plan) => {
+  const handleValueChange = (planSelected: "Free" | "advanced" | "pro" | "basic") => {
     if (planSelected) {
       setPlanSelected(planSelected);
-      updateForm({ plan: planSelected });
     }
   };
 

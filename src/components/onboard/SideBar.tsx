@@ -24,7 +24,8 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
               <RoughNotation
                 type="underline"
                 show={currentStepIndex === 0}
-                color="#ffe666" children={""}              >
+                color="#ffe666"
+              >
                 Your info
               </RoughNotation>
             </button>
@@ -43,7 +44,8 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
               <RoughNotation
                 type="underline"
                 show={currentStepIndex === 1}
-                color="#bd284d" children={""}              >
+                color="#bd284d"
+              >
                 Select plan
               </RoughNotation>
             </button>
@@ -62,7 +64,8 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
               <RoughNotation
                 type="underline"
                 show={currentStepIndex === 2}
-                color="#E7B8FF" children={""}              >
+                color="#E7B8FF"
+              >
                 Add-ons
               </RoughNotation>
             </button>
@@ -81,7 +84,8 @@ const SideBar = ({ currentStepIndex, goTo }: NavProps) => {
               <RoughNotation
                 type="underline"
                 show={currentStepIndex === 3}
-                color="#6fe79f" children={""}              >
+                color="#6fe79f"
+              >
                 Summary
               </RoughNotation>
             </button>

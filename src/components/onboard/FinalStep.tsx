@@ -12,7 +12,7 @@ type StepProps = FormItems & {
 const FinalStep = ({ yearly, plan, addOns, goTo }: StepProps) => {
   let planPrice = 0;
   switch (plan) {
-    case "arcade":
+    case "Free":
       planPrice = 9;
       break;
     case "advanced":
@@ -37,7 +37,8 @@ const FinalStep = ({ yearly, plan, addOns, goTo }: StepProps) => {
   return (
     <FormWrapper
       title="Finishing Up"
-      description="Double-check everything looks OK before confirming." children={""}    >
+      description="Double-check everything looks OK before confirming."
+    >
       <div className="">
         <div className="bg-neutral-900 p-4 mt-2 rounded-md border border-neutral-700">
           <div className="flex justify-between items-center">

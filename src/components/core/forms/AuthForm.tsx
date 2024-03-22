@@ -15,9 +15,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { GithubIcon } from "lucide-react";
-import { supabase } from "@/lib/auth/supabase";
-import Page from "@/app/[locale]/(site)/onboard/page";
-import { useRouter } from "@/lib/intl/navigation";
 const formSchema = z.object({
   email: z.string().email(),
 });
@@ -36,19 +33,18 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
   });
 
   // 2. Define a submit handler.
-
   function onSubmit(values: z.infer<typeof formSchema>) {
-    supabase.auth.signIn({
+    console.log(values);
+    signIn("email", {
       email: values.email,
-    }).then(({ user, session, error }) => {
-      if (error) {
-        console.error('Sign-in error:', error.message);
+      callbackUrl: "/", // Redirect to the homepage after successful sign-in
+    }).then((result) => {
+      if (result.error) {
+        console.error("Sign-in error:", result.error);
         // Handle sign-in error (e.g., show an error message)
       } else {
-        console.log('Sign-in success', user, session);
+        console.log("Sign-in success");
         // Handle sign-in success (e.g., redirect to a dashboard)
-        // Redirect to the homepage or another page after successful sign-in
-        window.location.href = '/';
       }
     });
   }
@@ -60,11 +56,7 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
     primaryMessage = "sign in";
     secondaryMessage = "sign in";
   }
-const router = useRouter();
 
-const handleClick = () => {
-  router.push('/onboard');
-};
   return (
     <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
       <div className="flex flex-col space-y-2 text-center">
@@ -90,15 +82,14 @@ const handleClick = () => {
                       {...field}
                       
                     />
-                    
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-           <Button onClick={handleClick} type="submit" className="capitalize">
-    {secondaryMessage} with Email
-  </Button>
+            <Button  onClick={() => signIn("email", { callbackUrl: "/" })} type="submit" className="capitalize" >
+              {secondaryMessage} with Email
+            </Button>
           </form>
         </Form>
         <div className="relative">
@@ -113,7 +104,7 @@ const handleClick = () => {
         </div>
         <Button
           variant="secondary"
-          onClick={() => signIn("github", { callbackUrl: "/onboard" })}
+          onClick={() => signIn("github", { callbackUrl: "/" })}
           className="capitalize bg-indigo-700 hover:bg-indigo-800"
         >
           <GithubIcon className="h-4 mr-1" /> {secondaryMessage} with Github
