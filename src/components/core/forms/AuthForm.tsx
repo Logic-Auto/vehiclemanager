@@ -87,7 +87,7 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
                 </FormItem>
               )}
             />
-            <Button  onClick={() => signIn("email", { callbackUrl: "/" })} type="submit" className="capitalize" >
+            <Button  onClick={() => { callbackUrl: "/en/dashboard" })} type="submit" className="capitalize" >
               {secondaryMessage} with Email
             </Button>
           </form>

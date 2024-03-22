@@ -62,7 +62,7 @@ export function Sidebar() {
           </Button>
         </Collapsible.Trigger>
       </div>
-      <img src="/logo3.png" alt="Your Image" height="100" width="200" />
+      <img src="/logo3.png" alt="Your Image" height="80" width="100" />
       <Collapsible.Content
         forceMount
         className="flex flex-1 flex-col gap-6 data-[state=closed]:hidden lg:data-[state=closed]:flex"
