@@ -87,7 +87,7 @@ export const AuthForm = ({ variant }: AuthFormProps) => {
                 </FormItem>
               )}
             />
-         <Button onClick={() => window.location.href = "/dashboard"} type="submit" className="capitalize">
+         <Button onClick={() => window.location.href = "/en/dashboard"} type="submit" className="capitalize">
   {secondaryMessage} with Email
 </Button>
 
