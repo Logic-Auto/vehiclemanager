@@ -18,6 +18,7 @@ import Databases from "@/components/marketing/databases/Databases";
 import FAQs from "@/components/marketing/faqs/FAQs";
 import International from "@/components/marketing/international/International";
 import LemonSqueezyLogo from "@/components/logos/lemonsqueezy";
+import Header from "@/components/core/header/Header";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
@@ -30,6 +31,7 @@ export default function Home() {
   const t = useTranslations("Index");
   return (
     <>
+    <Header />
       <Hero
         size="lg"
         title={t("title")}
